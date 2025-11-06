@@ -1,0 +1,35 @@
+Algorithme Somme_Elements_Distincts
+Variables :
+    ensemble1, ensemble2 : tableau d’entiers
+    i, j, somme : entier
+    existe : booléen
+
+Début
+    somme ← 0
+    
+    Pour i ← 1 à longueur(ensemble1) faire
+        existe ← FAUX
+        Pour j ← 1 à longueur(ensemble2) faire
+            Si ensemble1[i] = ensemble2[j] alors
+                existe ← VRAI
+            FinSi
+        FinPour
+        Si existe = FAUX alors
+            somme ← somme + ensemble1[i]
+        FinSi
+    FinPour
+
+    Pour j ← 1 à longueur(ensemble2) faire
+        existe ← FAUX
+        Pour i ← 1 à longueur(ensemble1) faire
+            Si ensemble2[j] = ensemble1[i] alors
+                existe ← VRAI
+            FinSi
+        FinPour
+        Si existe = FAUX alors
+            somme ← somme + ensemble2[j]
+        FinSi
+    FinPour
+
+    Afficher "La somme des éléments distincts est : ", somme
+Fin
